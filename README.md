@@ -1,6 +1,6 @@
 # Add Drop Website in a Front-End roll.
 
-## 💡This project is my first website as a front-end roll. And this is an Add-Drop Website for student to enter their informantion on process.
+### 💡This project is my first website as a front-end roll. And this is an Add-Drop Website for student to enter their informantion on process.
 
 <img width="1440" alt="Screenshot 2023-01-21 at 18 44 19" src="https://user-images.githubusercontent.com/122346708/213865416-2f9a2662-7e66-4cfb-9758-66d58e3f1686.png">
 
