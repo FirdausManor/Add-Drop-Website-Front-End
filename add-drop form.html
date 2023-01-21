@@ -1,0 +1,548 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>คำร้องขอเพิ่ม-ถอน รายวิชา</title>
+	<script src="controller.js"></script>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com"> 
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+	<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+
+	<style>
+
+	body {
+		background: linear-gradient(#87cefa, #ffffff, #ffffff, #87cefa);
+		font-family: 'Kanit', sans-serif;
+	}
+
+	*{font-family: 'Kanit', sans-serif;}
+	
+	.p1 {
+ 		text-align: center;
+	}
+
+	.p2 {
+		text-align: right;
+	}
+
+	.p3 {
+		margin-left:  40px;
+	}
+
+	.p4 {
+		text-align: left;
+	}
+
+	table, th, td {
+  		border: 1px solid black;
+  		text-align: center;
+  	}
+
+  	input[type = text], select {
+  		width: 80%;
+  		padding: 12px 20px;
+  		margin: 8px 0px;
+  		display: inline-block;
+  		border: 1px solid #ccc;
+  		border-radius: 4px;
+  		box-sizing: border-box;
+  	}
+
+  	input[type = text1], select {
+ 		width: 30%;
+  		padding: 12px 20px;
+  		margin: 8px 0px;
+  		display: inline-block;
+  		border: 1px solid #ccc;
+  		border-radius: 4px;
+  		box-sizing: border-box;
+	}
+
+  	#customers {
+ 		border-collapse: collapse;
+  		width: 100%;
+	}
+
+	#customers td, #customers th {
+ 		border: 1px solid #ddd;
+  		padding: 8px;
+	}
+
+	#customers tr:nth-child(even){
+		background-color: #f2f2f2;
+	}
+
+	#customers tr:hover {
+		background-color: #ddd;
+	}
+
+	#customers th {
+  		padding-top: 12px;
+  		padding-bottom: 12px;
+  		text-align: center;
+  		background-color: #4682B4;
+  		color: white;
+	}
+
+	.wrapper {
+		max-width: 1100px;
+		width: 100%;
+		margin: 30px auto;
+		padding: 30px;
+		background-color: #fff;
+		border: 1px solid #DCDCDC;
+		border-radius: 5px;
+	}
+
+	.div1 {
+		border: 2px black;
+  		border-radius: 12px;
+	 	margin-top: 1px;
+  		margin-bottom: 1px;
+  		margin-right: 400px;
+  		margin-left: 400px;
+  		background-color: #2E8B57;
+		}
+
+	#roundCorners {
+		margin-top: 10px;
+		border-radius: 55px;
+		padding: 15px;
+		width: 950px;
+		height: 50px;
+		background-color: #4682B4;
+		margin: inherit;
+	}
+
+	#roundCorners1 {
+		border-radius: 55px;
+		padding: 5px;
+		width: 600px;
+		height: 30px;
+		background-color: #4682B4;
+		margin: inherit;
+	}
+
+	#roundCorners2 {
+		text-align: center;
+		border-radius: 55px;
+		padding: 5px;
+		width: 150px;
+		height: 30px;
+		background-color: #4682B4;
+		margin: inherit;
+	}
+
+	#roundCorners3 { 
+		text-align: center;
+		border-radius: 55px;
+		padding: 5px;
+		width: 350px;
+		height: 30px;
+		background-color: #4682B4;
+		margin: inherit;
+	}
+
+	#roundCorners4 {
+		text-align: center;
+		border-radius: 55px;
+		padding: 5px;
+		width: 200px;
+		height: 30px;
+		background-color: #4682B4;
+		margin: inherit;
+	}
+
+	#t1 {
+  		-moz-tab-size: 4; 
+  		tab-size: 4;
+	}
+
+	img {
+		margin-right: inherit;
+	}
+
+	.button {
+  		background-color: #4CAF50;
+  		border: none;
+  		color: white;
+  		padding: 16px 50px;
+  		text-align: center;
+  		text-decoration: none;
+  		display: inline-block;
+  		font-size: 18px;
+  		margin: 4px 2px;
+  		transition-duration: 0.4s;
+  		cursor: pointer;
+	}
+
+	.button1 {
+  		background-color: white; 
+  		color: red; 
+  		border: 3px solid #4CAF50;
+  		border-radius: 55px;
+	}
+
+	.button1:hover {
+  		background-color: #4CAF50;
+ 	 	color: white;
+	}
+	</style>
+</head>
+
+<body>
+	<img src="./img/logo.png" alt="logo">
+	<div class="wrapper">
+
+	<center>
+		<span style="color: #FFFAF0">
+			<span style="color: #FFFAF0">
+				<h1><p id="roundCorners">คำร้องขอเพิ่ม-ถอน รายวิชา</p></h1>
+				<h3><p id="roundCorners1">คณะวิทยาศาสตร์และเทคโนโลยี มหาวิทยาลัยธรรมศาสตร์ ศูนย์รังสิต</p></h3>
+			</span>
+		</span>
+	</center><br>
+
+	<form>
+
+		<td><span style="color: red;">*</span> แทน บังคับใส่ข้อมูล</td><br><br>
+		<label style="width: 50%" for="date/">วัน<span style="color: red;">*</span>&emsp;
+			<select style="width: 15%" id="dateInput">
+      			<option value="1">1</option>
+      			<option value="2">2</option>
+      			<option value="3">3</option>
+      			<option value="4">4</option>
+      			<option value="5">5</option>
+      			<option value="6">6</option>
+      			<option value="7">7</option>
+      			<option value="8">8</option>
+      			<option value="9">9</option>
+      			<option value="10">10</option>
+      			<option value="11">11</option>
+      			<option value="12">12</option>
+      			<option value="13">13</option>
+      			<option value="14">14</option>
+      			<option value="15">15</option>
+      			<option value="16">16</option>
+      			<option value="17">17</option>
+      			<option value="18">18</option>
+      			<option value="19">19</option>
+      			<option value="20">20</option>
+      			<option value="21">21</option>
+      			<option value="22">22</option>
+      			<option value="23">23</option>
+      			<option value="24">24</option>
+      			<option value="25">25</option>
+      			<option value="26">26</option>
+      			<option value="27">27</option>
+      			<option value="28">28</option>
+      			<option id="day29Option" value="29">29</option>
+      			<option id="day30Option" value="30">30</option>
+      			<option id="day31Option" value="31">31</option>
+      		</select>
+      			
+      		</select>
+		</label></h3>
+
+		<label for="month">&nbsp;&nbsp;&nbsp;&nbsp;เดือน<span style="color: red;">*</span>&emsp;
+			<select style="width: 15%" id="monthInput" onchange="populateDate()">
+      			<option value="1">1</option>
+      			<option value="2">2</option>
+      			<option value="3">3</option>
+      			<option value="4">4</option>
+      			<option value="5">5</option>
+      			<option value="6">6</option>
+      			<option value="7">7</option>
+      			<option value="8">8</option>
+      			<option value="9">9</option>
+      			<option value="10">10</option>
+      			<option value="11">11</option>
+      			<option value="12">12</option>
+      		</select>
+		</label></h3>
+
+		<label style="width: 50%" for="year">&nbsp;&nbsp;&nbsp;&nbsp;ปี(พ.ศ.)<span style="color: red;">*</span>
+			<select style="width: 15%" id="yearInput" onchange="populateDate()">
+				<option value="2555">2555</option>
+      			<option value="2556">2556</option>
+      			<option value="2557">2557</option>
+      			<option value="2558">2558</option>
+      			<option value="2559">2559</option>
+      			<option value="2560">2560</option>
+      			<option value="2561">2561</option>
+      			<option value="2562">2562</option>
+      			<option value="2563">2563</option>
+      			<option value="2564">2564</option>
+      		</select>
+		</label></h3>
+	
+		<span style="color: #FFFAF0">
+			<h3><p id="roundCorners2">ประวัตินักศึกษา</p></h3>
+		</span>
+
+		<label for="คำนำหน้า">คำนำหน้าชื่อ<span style="color: red;">*</span>&emsp;  </label>
+    	<select style="width: 10%" name="prefix_name">
+      		<option value="นาย">นาย</option>
+      		<option value="นาง">นาง</option>
+      		<option value="นางสาว">นางสาว</option>
+    	</select>
+
+		<label for="fname" style="width: 7%">&nbsp;&nbsp;&nbsp;&nbsp;ชื่อ<span style="color: red;">*</span>&emsp;<input type="text1" id="firstNameInput">&nbsp;&nbsp;&nbsp;&nbsp;สกุล<span style="color: red;">*</span>&emsp;<input type="text1" id="lastNameInput"><br> เลขทะเบียน<span style="color: red;">*</span>&emsp;<input type="text1" id="studentIDInput"></label>
+
+		<label for="fname">&nbsp;&nbsp;&nbsp;&nbsp;ชั้นปีที่<span style="color: red;">*</span>&emsp;  <input type="text1" id="classNoInput"><br>สาขาวิชา<span style="color: red;">*</span>&emsp;<input type="text1" id="fieldInput">&nbsp;&nbsp;&nbsp;&nbsp;อาจารย์ที่ปรึกษา<span style="color: red;">*</span>&emsp;<input type="text1" id="advisorInput"><br></label>
+
+		<label for="fname">โทรศัพท์มือถือ<span style="color: red;">*</span>&emsp;<input type="text1" id="mobileNoInput">&emsp;โทรศัพท์บ้าน(ถ้ามี)&emsp;<input type="text1" id="telNoInput"><br></label>
+
+		<span style="color: #FFFAF0">
+			<h3><p id="roundCorners2">ที่อยู่นักศึกษา</p></h3>
+		</span>
+
+		<label for="fname">บ้านเลขที่<span style="color: red;">*</span>&emsp;
+			<input type="text1" id="addressNoInput">&nbsp;&nbsp;&nbsp;&nbsp;หมู่<span style="color: red;">*</span>&emsp;<input type="text1" id="mooInput"><br> ตำบล<span style="color: red;">*</span>&emsp;<input type="text1" id="tumbolInput">&nbsp;&nbsp;&nbsp;&nbsp;อำเภอ<span style="color: red;">*</span>&emsp;<input type="text1" id="amphurInput"><br>จังหวัด<span style="color: red;">*</span>&emsp;<input type="text1" id="provinceInput"></label>
+
+		<label for="fname">&nbsp;&nbsp;&nbsp;&nbsp;รหัสไปรษณีย์<span style="color: red;">*</span>&emsp;<input type="text1" id="postalCodeInput"><br></label>
+
+		<span style="color: #FFFAF0">
+			<h3><p id="roundCorners3">รายละเอียดการขอเพิ่ม-ถอน รายวิชา</p></h3>
+		</span>
+
+		<label for="add/drop"> จำนวนวิชาที่ต้องการ<strong>ขอเพิ่ม<span style="color: red;">*</span></strong>&emsp;
+
+			<select style="width: 7%">
+				<option value="add">0</option>
+      			<option value="add" id="subjectOption1">1</option>
+      			<option value="add" id="subjectOption2">2</option>
+      			<option value="add" id="subjectOption3">3</option>
+      			<option value="add" id="subjectOption4">4</option>
+      			<option value="add" id="subjectOption5">5</option>
+      			<option value="add" id="subjectOption6">6</option>
+      			<option value="add" id="subjectOption7">7</option>
+      			<option value="add" id="subjectOption8">8</option>
+      			<option value="add" id="subjectOption9">9</option>
+      			<option value="add" id="subjectOption10">10</option>
+    		</select><br>
+
+    	 จำนวนวิชาที่ต้องการ<strong>ขอถอน<span style="color: red;">*</span></strong>&emsp;
+    	 	<select style="width: 7%">
+    	 		<option value="drop">0</option>
+      			<option value="drop" id="subjectOption1">1</option>
+      			<option value="drop" id="subjectOption2">2</option>
+      			<option value="drop" id="subjectOption3">3</option>
+      			<option value="drop" id="subjectOption4">4</option>
+      			<option value="drop" id="subjectOption5">5</option>
+      			<option value="drop" id="subjectOption6">6</option>
+      			<option value="drop" id="subjectOption7">7</option>
+      			<option value="drop" id="subjectOption8">8</option>
+      			<option value="drop" id="subjectOption9">9</option>
+      			<option value="drop" id="subjectOption10">10</option>
+    		</select></label>
+	
+
+	<table id="customers">
+  		<tr>
+    		<th>ลำดับ</th>
+    		<th style="width: 15%">ต้องการขอเพิ่ม-ถอน</th>
+    		<th>รหัสวิชา</th>
+    		<th>ชื่อวิชา</th>
+    		<th>Section</th>
+    		<th>วัน/เวลา</th>
+    		<th>หน่วยกิต</th>
+    		<th>ชื่อผู้สอน</th>
+    		<th>ผู้สอนอนุญาต</th>
+  		</tr>
+  		<tr>
+    		<td>1.</td>
+    		<td>
+    			<select id="commandSelect1" style="width: 100%">
+					<option value="" selected style="text-align: center;">---เลือก---</option>	
+      				<option value="add">ขอเพิ่ม</option>
+      				<option value="drop">ขอถอน</option>
+    			</select>
+    		</td>
+    		<td><input type="text" id="subjectCode1" style="width: 100%"></td>
+    		<td><input type="text" id="subjectName1" style="width: 100%"></td>
+    		<td><input type="text" id="subjectSection1" style="width: 100%"></td>
+    		<td><input type="text" id="subjectDate1" style="width: 100%"></td>
+    		<td><input type="text" id="subjectCredit1" style="width: 100%"></td>
+    		<td><input type="text" id="subjectTeacher1" style="width: 100%"></td>
+    		<td><input type="checkbox" id="subjectTeacherCheck1"></td>
+  		</tr>
+
+  		<tr>
+    		<td>2.</td>
+    		<td>
+    			<select id="commandSelect2" style="width: 100%">
+					<option value="" selected style="text-align: center;">---เลือก---</option>
+      				<option value="add">ขอเพิ่ม</option>
+      				<option value="drop">ขอถอน</option>
+    			</select>
+    		</td>
+    		<td><input type="text" id="subjectCode2" style="width: 100%"></td>
+    		<td><input type="text" id="subjectName2" style="width: 100%"></td>
+    		<td><input type="text" id="subjectSection2" style="width: 100%"></td>
+    		<td><input type="text" id="subjectDate2" style="width: 100%"></td>
+    		<td><input type="text" id="subjectCredit2" style="width: 100%"></td>
+    		<td><input type="text" id="subjectTeacher2" style="width: 100%"></td>
+    		<td><input type="checkbox" id="subjectTeacherCheck2"></td>
+  		</tr>
+
+  		<tr>
+    		<td>3.</td>
+    		<td>
+    			<select id="commandSelect3" style="width: 100%">
+					<option value="" selected style="text-align: center;">---เลือก---</option>
+      				<option value="add">ขอเพิ่ม</option>
+      				<option value="drop">ขอถอน</option>
+    			</select>
+    		</td>
+    		<td><input type="text" id="subjectCode3" style="width: 100%"></td>
+    		<td><input type="text" id="subjectName3" style="width: 100%"></td>
+    		<td><input type="text" id="subjectSection3" style="width: 100%"></td>
+    		<td><input type="text" id="subjectDate3" style="width: 100%"></td>
+    		<td><input type="text" id="subjectCredit3" style="width: 100%"></td>
+    		<td><input type="text" id="subjectTeacher3" style="width: 100%"></td>
+    		<td><input type="checkbox" id="subjectTeacherCheck3"></td>
+  		</tr>
+
+  		<tr>
+    		<td>4.</td>
+    		<td>
+    			<select id="commandSelect4" style="width: 100%">
+					<option value="" selected style="text-align: center;">---เลือก---</option>
+      				<option value="add">ขอเพิ่ม</option>
+      				<option value="drop">ขอถอน</option>
+    			</select>
+    		</td>
+    		<td><input type="text" id="subjectCode4" style="width: 100%"></td>
+    		<td><input type="text" id="subjectName4" style="width: 100%"></td>
+    		<td><input type="text" id="subjectSection4" style="width: 100%"></td>
+    		<td><input type="text" id="subjectDate4" style="width: 100%"></td>
+    		<td><input type="text" id="subjectCredit4" style="width: 100%"></td>
+    		<td><input type="text" id="subjectTeacher4" style="width: 100%"></td>
+    		<td><input type="checkbox" id="subjectTeacherCheck4"></td>
+  		</tr>
+
+  		<tr>
+    		<td>5.</td>
+    		<td>
+    			<select id="commandSelect5" style="width: 100%">
+					<option value="" selected style="text-align: center;">---เลือก---</option>
+      				<option value="add">ขอเพิ่ม</option>
+      				<option value="drop">ขอถอน</option>
+    			</select>
+    		</td>
+    		<td><input type="text" id="subjectCode5" style="width: 100%"></td>
+    		<td><input type="text" id="subjectName5" style="width: 100%"></td>
+    		<td><input type="text" id="subjectSection5" style="width: 100%"></td>
+    		<td><input type="text" id="subjectDate5" style="width: 100%"></td>
+    		<td><input type="text" id="subjectCredit5" style="width: 100%"></td>
+    		<td><input type="text" id="subjectTeacher5" style="width: 100%"></td>
+    		<td><input type="checkbox" id="subjectTeacherCheck5"></td>
+  		</tr>
+
+  		<tr>
+    		<td>6.</td>
+    		<td>
+    			<select id="commandSelect6" style="width: 100%">
+					<option value="" selected style="text-align: center;">---เลือก---</option>
+      				<option value="add">ขอเพิ่ม</option>
+      				<option value="drop">ขอถอน</option>
+    			</select>
+    		</td>
+    		<td><input type="text" id="subjectCode6" style="width: 100%"></td>
+    		<td><input type="text" id="subjectName6" style="width: 100%"></td>
+    		<td><input type="text" id="subjectSection6" style="width: 100%"></td>
+    		<td><input type="text" id="subjectDate6" style="width: 100%"></td>
+    		<td><input type="text" id="subjectCredit6" style="width: 100%"></td>
+    		<td><input type="text" id="subjectTeacher6" style="width: 100%"></td>
+    		<td><input type="checkbox" id="subjectTeacherCheck6"></td>
+  		</tr>
+
+  		<tr>
+    		<td>7.</td>
+    		<td>
+    			<select id="commandSelect7" style="width: 100%">
+					<option value="" selected style="text-align: center;">---เลือก---</option>
+      				<option value="add">ขอเพิ่ม</option>
+      				<option value="drop">ขอถอน</option>
+    			</select>
+    		</td>
+    		<td><input type="text" id="subjectCode7" style="width: 100%"></td>
+    		<td><input type="text" id="subjectName7" style="width: 100%"></td>
+    		<td><input type="text" id="subjectSection7" style="width: 100%"></td>
+    		<td><input type="text" id="subjectDate7" style="width: 100%"></td>
+    		<td><input type="text" id="subjectCredit7" style="width: 100%"></td>
+    		<td><input type="text" id="subjectTeacher7" style="width: 100%"></td>
+    		<td><input type="checkbox" id="subjectTeacherCheck7"></td>
+  		</tr>
+
+  		<tr>
+    		<td>8.</td>
+    		<td>
+    			<select id="commandSelect8" style="width: 100%">
+					<option value="" selected style="text-align: center;">---เลือก---</option>
+      				<option value="add">ขอเพิ่ม</option>
+      				<option value="drop">ขอถอน</option>
+    			</select>
+    		</td>
+    		<td><input type="text" id="subjectCode8" style="width: 100%"></td>
+    		<td><input type="text" id="subjectName8" style="width: 100%"></td>
+    		<td><input type="text" id="subjectSection8" style="width: 100%"></td>
+    		<td><input type="text" id="subjectDate8" style="width: 100%"></td>
+    		<td><input type="text" id="subjectCredit8" style="width: 100%"></td>
+    		<td><input type="text" id="subjectTeacher8" style="width: 100%"></td>
+    		<td><input type="checkbox" id="subjectTeacherCheck8"></td>
+  		</tr>
+
+  		<tr>
+    		<td>9.</td>
+    		<td>
+    			<select id="commandSelect9" style="width: 100%">
+					<option value="" selected style="text-align: center;">---เลือก---</option>
+      				<option value="add">ขอเพิ่ม</option>
+      				<option value="drop">ขอถอน</option>
+    			</select>
+    		</td>
+    		<td><input type="text" id="subjectCode9" style="width: 100%"></td>
+    		<td><input type="text" id="subjectName9" style="width: 100%"></td>
+    		<td><input type="text" id="subjectSection9" style="width: 100%"></td>
+    		<td><input type="text" id="subjectDate9" style="width: 100%"></td>
+    		<td><input type="text" id="subjectCredit9" style="width: 100%"></td>
+    		<td><input type="text" id="subjectTeacher9" style="width: 100%"></td>
+    		<td><input type="checkbox" id="subjectTeacherCheck9"></td>
+  		</tr>
+
+  		<tr>
+    		<td>10.</td>
+    		<td>
+    			<select id="commandSelect10" style="width: 100%">
+					<option value="" selected style="text-align: center;">---เลือก---</option>
+      				<option value="add">ขอเพิ่ม</option>
+      				<option value="drop">ขอถอน</option>
+    			</select>
+    		</td>
+    		<td><input type="text" id="subjectCode10" style="width: 100%"></td>
+    		<td><input type="text" id="subjectName10" style="width: 100%"></td>
+    		<td><input type="text" id="subjectSection10" style="width: 100%"></td>
+    		<td><input type="text" id="subjectDate10" style="width: 100%"></td>
+    		<td><input type="text" id="subjectCredit10" style="width: 100%"></td>
+    		<td><input type="text" id="subjectTeacher10" style="width: 100%"></td>
+    		<td><input type="checkbox" id="subjectTeacherCheck10"></td>
+  		</tr>
+
+	</table>
+
+	<span style="color: #FFFAF0">
+		<h3><p id="roundCorners4">เหตุผลที่ขอเพิ่ม-ถอน<span style="color: red;">*</span></p></h3>
+	</span>
+	
+	<p class="p1"><textarea id="causeInput" name="เพราะ" rows="15" cols="140"></textarea></p>
+	
+	<p class="p1"><button class="button button1" onclick="save(event)">Submit</button></p>
+
+	</form>
+
+  </div>
+</body>
+</html>
